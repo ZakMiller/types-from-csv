@@ -2,15 +2,15 @@
 
 ## Overview
 
-types-from-csv is a package I wrote to help me infer SQL types given a CSV file. It's very rudimentary. It takes in the path to a CSV and returns a list of lists. Sample result:
+types-from-csv is a package I wrote to help me infer SQL types given a CSV file. It's very rudimentary. It takes in the path to a CSV and returns a list of objects of the form:
 
 ```javascript
 [
-    ['columnOneName', 'bit'],
-    ['columnTwoName', 'date'],
-    ['columnThreeName', 'char'],
-    ['columnFourName', 'number'],
-    ['columnFiveName', 'string']
+    {name: 'columnOneName', type: 'bit'},
+    {name: 'columnTwoName', type: 'date'},
+    {name: 'columnThreeName', type: 'char'},
+    {name: 'columnFourName', type: 'number'},
+    {name: 'columnFiveName', type: 'string'}
 ]
 
 ```

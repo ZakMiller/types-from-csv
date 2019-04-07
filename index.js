@@ -62,7 +62,10 @@ function getTypesFromTypeDictionary(typeDictionary) {
     const keys = Object.keys(typeDictionary);
     const types = keys.map(k => {
         const possibleTypes = typeDictionary[k];
-        return [k, getType(possibleTypes)];
+        return {
+            name: k,
+            type: getType(possibleTypes)
+        };
     });
     return types;
 }

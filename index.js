@@ -27,18 +27,10 @@ function updatePossibleTypes(possibleTypes, newData) {
         possibleTypes = getPossibleTypes();
     }
     if (newData !== "") {
-        if (newData != 0 && newData != 1) {
-            possibleTypes.isBit = false;
-        }
-        if (isNaN(newData)) {
-            possibleTypes.isNumber = false;
-        }
-        if (!isDate(newData)) {
-            possibleTypes.isDate = false;
-        }
-        if (newData.length !== 1) {
-            possibleTypes.isChar = false;
-        }
+        possibleTypes.isBit = possibleTypes.isBit && (newData == 1 || newData == 0);
+        possibleTypes.isNumber = possibleTypes.isNumber && !isNaN(newData);
+        possibleTypes.isDate = possibleTypes.isDate && isDate(newData);
+        possibleTypes.isChar = possibleTypes.isChar && newData.length === 1;
     }
 
     return possibleTypes;

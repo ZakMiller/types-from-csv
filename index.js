@@ -37,10 +37,10 @@ function updatePossibleTypes(possibleTypes, newData) {
 }
 
 function getType({
-                     isBit: isBit,
-                     isNumber: isNumber,
-                     isDate: isDate,
-                     isChar: isChar
+                     isBit,
+                     isNumber,
+                     isDate,
+                     isChar
                  })
 {
     if (isBit) {

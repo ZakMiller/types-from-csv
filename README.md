@@ -20,9 +20,11 @@ Currently, it only detects those types. 'string' is the fallback if nothing else
 ## Usage
 
 ``` javascript
-const csvTypes = require('csv-types');
+const csvTypes = require('types-from-csv');
 
-const typeData = csvTypes.getTypesFromCSV('yourpath.csv');
-console.log(typeData);
+csvTypes.getTypesFromCSV('your-path.csv')
+    .then(d => {
+        console.log(d);
+    });
 ```
 
